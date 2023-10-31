@@ -20,7 +20,7 @@ const Featured = async () => {
   return (
     <div className={styles.container}>
       {data.map((item) => (
-        <div className={styles.post}>
+        <div className={styles.post} key={item._id}>
           <div className={styles.imgContainer}>
             <Image src={item.img} alt="" fill className={styles.image} />
           </div>
