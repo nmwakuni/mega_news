@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/isFeatured", {
+  const res = await fetch("https://meganews.vercel.app/api/isFeatured", {
     cache: "no-store",
   });
 
