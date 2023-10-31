@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./menuPosts.module.css";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/editorsPick", {
+  const res = await fetch("https://meganews.vercel.app/api/editorsPick", {
     cache: "no-store",
   });
 
