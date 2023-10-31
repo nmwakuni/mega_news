@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const getData = async () => {
   const res = await fetch("https://meganews.vercel.app/api/isFeatured", {
-    cache: "no-store",
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) {

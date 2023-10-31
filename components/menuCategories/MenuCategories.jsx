@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const getData = async () => {
   const res = await fetch("https://meganews.vercel.app/api/categories", {
-    cache: "no-store",
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) {
