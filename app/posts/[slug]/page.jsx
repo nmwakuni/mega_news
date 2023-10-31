@@ -4,12 +4,9 @@ import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
-  const res = await fetch(
-    `process.env.NEXT_PUBLIC_BASE_URL/api/posts/${slug}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`https://meganews.vercel.app/api/posts/${slug}`, {
+    next: { revalidate: 60 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed");
