@@ -18,7 +18,7 @@ export const authOptions = {
         return {
           id: profile.id.toString(),
           name: profile.name || user.login,
-          email: user.email,
+          email: profile.email,
         };
       },
     }),
