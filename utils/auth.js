@@ -10,6 +10,13 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      profile(profile) {
+        return {
+          id: profile.id.toString(),
+          name: profile.name || user.login,
+          email: profile.email,
+        };
+      },
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID,
