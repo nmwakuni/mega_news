@@ -14,8 +14,16 @@ export const authOptions = {
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      profile(profile) {
+        return {
+          id: profile.id.toString(),
+          name: profile.name || user.login,
+          email: user.email,
+        };
+      },
     }),
   ],
 };
 
 export const getAuthSession = () => getServerSession(authOptions);
+
